@@ -1,0 +1,18 @@
+angstrom_to_nanometers() {
+  echo "scale=4; $1 / 10" | bc
+  }
+
+  # Convert angstrom to meters
+  angstrom_to_meters() {
+    echo "scale=10; $1 / 1e10" | bc
+ }
+    echo "Enter value in angstroms:"
+    read angstrom_value
+
+    nanometers=$(angstrom_to_nanometers $angstrom_value)
+    meters=$(angstrom_to_meters $angstrom_value)
+
+    echo "$angstrom_value angstroms = $nanometers nanometers"
+    echo "$angstrom_value angstroms = $meters meters"
+
+~
